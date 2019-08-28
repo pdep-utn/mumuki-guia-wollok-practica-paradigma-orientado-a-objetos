@@ -23,7 +23,7 @@ test "Luego de 2 masajes Olivia es feliz" {
 
 test "Si Olivia discute con concentración baja, su concentración se mantiene igual" {
 	olivia.discutir()
-	assert.equals(olivia.gradoDeConcentracion(), concentracionInicialDeOlivia)
+	assert.equals(olivia.gradoDeConcentracion(), 4)
 }
 
 test "Si Olivia se da un masaje y luego discute, su concentración queda en 5" {
