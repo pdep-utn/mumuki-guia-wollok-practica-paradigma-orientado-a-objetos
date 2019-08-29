@@ -30,7 +30,9 @@ test "Luego de que el spa atienda a Adriano, su nivel de contractura baja" {
 }
 
 test "Luego de que el spa atienda a Adriano 3 veces, su nivel de contractura queda en 0" {
-	3.times {n => spa.atender(adriano)}
+	spa.atender(adriano)
+	spa.atender(adriano)
+	spa.atender(adriano)
 	assert.equals(0, adriano.nivelDeContractura())
 }
 
