@@ -20,3 +20,5 @@ Necesitamos que sea posible hacer (por lo menos) lo siguiente:
 ```
 
 > Te dejamos tu implementación para el ejercicio anterior en el editor, por si necesitás hacer algún cambio a tu solución además de agregar al objeto `adriano` con el comportamiento indicado.
+
+> Tené en cuenta que la funcionalidad del ejercicio anterior debe seguir andando.
