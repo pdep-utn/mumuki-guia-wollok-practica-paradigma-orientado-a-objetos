@@ -12,9 +12,7 @@
 	test "La cantidad total de productos cuando el carrito está vacío es 0"{
 		assert.equals(0, carrito.cantidadDeProductos())
 	}
-	test "La variedad del carrito cuando está vacío es 0"{
-		assert.equals(0, carrito.variedad())
-	}
+	
 	test "Si al carrito se le agregan 3 productos diferentes, la cantidad total de productos es 3"{
 		carrito.agregar(new Producto(descripcion = "Chocolate", precioUnitario = 20))
 		carrito.agregar(new Producto(descripcion = "Leche", precioUnitario = 30))
@@ -29,28 +27,16 @@
 		assert.equals(2, carrito.cantidadDeProductos())
 	}
 	
-	test "La variedad del carrito al cual se le agregó varias veces un único producto es 1" {
-	  const aceiteDeGirasol = new Producto(descripcion = "Aceite de girasol", precioUnitario = 60.75)
-		carrito.agregar(aceiteDeGirasol)
-		carrito.agregar(aceiteDeGirasol)
-		assert.equals(1, carrito.variedad())
-	}
-	
-	test "La variedad del carrito al cual sólo se le agregaron productos con descripciones distintas equivale a la cantidad de productos"{
-		carrito.agregar(new Producto(descripcion = "Chocolate", precioUnitario = 20))
-		carrito.agregar(new Producto(descripcion = "Leche", precioUnitario = 30))
-		carrito.agregar(new Producto(descripcion = "Aceite de girasol", precioUnitario = 60.75))
-		assert.equals(carrito.cantidadDeProductos(), carrito.variedad())
-	}
-	
 	test "El total a abonar cuando el carrito está vacío es 0" {
 		assert.equals(0, carrito.totalAAbonar())
 	}
+	
 	test "El total a abonar cuando el carrito tiene varios productos es la suma de los precios de los productos que se agregaron" {
 		carrito.agregar(new Producto(descripcion = "Chocolate", precioUnitario = 20))
 		carrito.agregar(new Producto(descripcion = "Leche", precioUnitario = 30))
 		assert.equals(50, carrito.totalAAbonar())
 	}
+	
 	test "El total a abonar cuando al carrito sólo se le agregó un mismo producto 2 veces, es el doble del precio de ese producto" {
 	  const aceiteDeGirasol = new Producto(descripcion = "Aceite de girasol", precioUnitario = 60.75)
 		carrito.agregar(aceiteDeGirasol)
