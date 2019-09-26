@@ -9,11 +9,11 @@
 		assert.equals(2, carrito.cantidadDeProductos())
 	}
 	
-	test "El valor a abonar de un producto por peso es el peso del producto multiplicado por el precio por peso del mismo" {
+	test "El precio a abonar por un producto por peso es el peso del producto multiplicado por el precio por peso del mismo" {
 		assert.equals(96, new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3).precioAAbonar())
 	}
 	
-	test "El total a abonar cuando el carrito tiene productos normales y por peso es la suma de los precios de los productos agregados" {
+	test "El total a abonar cuando el carrito tiene productos normales y por peso es la suma de los precios a abonar por cada producto agregado" {
 	  const quesoCremoso = new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.5)
 		carrito.agregar(quesoCremoso)
 		carrito.agregar(new Producto(descripcion = "Chocolate", precioUnitario = 20))
