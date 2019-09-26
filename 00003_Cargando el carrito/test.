@@ -43,17 +43,17 @@
 		assert.equals(carrito.cantidadDeProductos(), carrito.variedad())
 	}
 	
-	test "El valor a abonar cuando el carrito está vacío es 0" {
+	test "El total a abonar cuando el carrito está vacío es 0" {
 		assert.equals(0, carrito.totalAAbonar())
 	}
-	test "El valor a abonar cuando el carrito tiene varios productos es la suma de los precios de los productos que se agregaron" {
+	test "El total a abonar cuando el carrito tiene varios productos es la suma de los precios de los productos que se agregaron" {
 		carrito.agregar(new Producto(descripcion = "Chocolate", precioUnitario = 20))
 		carrito.agregar(new Producto(descripcion = "Leche", precioUnitario = 30))
 		assert.equals(50, carrito.totalAAbonar())
 	}
-	test "El valor a abonar cuando al carrito sólo se le agregó un mismo producto 2 veces, es el doble del precio de ese producto" {
+	test "El total a abonar cuando al carrito sólo se le agregó un mismo producto 2 veces, es el doble del precio de ese producto" {
 	  const aceiteDeGirasol = new Producto(descripcion = "Aceite de girasol", precioUnitario = 60.75)
 		carrito.agregar(aceiteDeGirasol)
 		carrito.agregar(aceiteDeGirasol)
-		assert.equals(aceiteDeGirasol.precioUnitario() * 2, carrito.totalAAbonar())
+		assert.equals(60.75 * 2, carrito.totalAAbonar())
 	}
