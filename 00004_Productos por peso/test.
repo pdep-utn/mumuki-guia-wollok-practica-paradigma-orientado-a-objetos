@@ -1,23 +1,23 @@
 	test "Se puede agregar un producto por peso al carrito" {
-		carrito.agregarAlCarrito(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
+		carrito.agregar(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
 		assert.equals(1, carrito.cantidadDeProductos())
 	}
 	
 	test "Si al carrito se le agrega un producto por peso y un producto que no es por peso, tiene en total 2 productos" {
-		carrito.agregarAlCarrito(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
-		carrito.agregarAlCarrito(new Producto(descripcion = "Aceite de girasol", precioUnitario = 60.75))
+		carrito.agregar(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
+		carrito.agregar(new Producto(descripcion = "Aceite de girasol", precioUnitario = 60.75))
 		assert.equals(2, carrito.cantidadDeProductos())
 	}
 	
 	test "Si se agrega al carrito un producto por peso con la misma descripción que otro, aunque el peso sea distinto, la variedad del carrito es 1" {
-		carrito.agregarAlCarrito(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
-		carrito.agregarAlCarrito(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.5))
+		carrito.agregar(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
+		carrito.agregar(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.5))
 		assert.equals(1, carrito.variedad())
 	}
 	
 	test "Si se agrega al carrito un producto por peso con otra descripción que otro producto por peso, la variedad del carrito es 2" {
-		carrito.agregarAlCarrito(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
-		carrito.agregarAlCarrito(new ProductoPorPeso(descripcion = "Papa", precioPorKilo = 40, peso = 1.5))
+		carrito.agregar(new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.3))
+		carrito.agregar(new ProductoPorPeso(descripcion = "Papa", precioPorKilo = 40, peso = 1.5))
 		assert.equals(2, carrito.variedad())
 	}
 	
@@ -27,8 +27,8 @@
 	
 	test "El total a abonar cuando el carrito tiene productos normales y por peso es la suma de los precios de los productos agregados" {
 	  const quesoCremoso = new ProductoPorPeso(descripcion = "Queso cremoso", precioPorKilo = 320, peso = 0.5)
-		carrito.agregarAlCarrito(quesoCremoso)
-		carrito.agregarAlCarrito(new Producto(descripcion = "Chocolate", precioUnitario = 20))
+		carrito.agregar(quesoCremoso)
+		carrito.agregar(new Producto(descripcion = "Chocolate", precioUnitario = 20))
 		assert.equals(quesoCremoso.valorAAbonar() + 20, carrito.totalAAbonar())
 	}
 	
