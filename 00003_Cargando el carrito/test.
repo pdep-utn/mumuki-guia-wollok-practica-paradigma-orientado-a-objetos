@@ -3,7 +3,7 @@
 	const leche = new Producto(descripcion = "Leche", precioUnitario = 30)
 
 	test "Debería poder agregarse un producto al carrito" {
-		carrito.agregar(aceiteDeGirasol)
+		carrito.agregar(new Producto(descripcion = "Chocolate", precioUnitario = 20))
 		assert.equals(1, carrito.cantidadDeProductos())
 	}
 	test "El carrito está vacío cuando no se le agregaron productos"{
