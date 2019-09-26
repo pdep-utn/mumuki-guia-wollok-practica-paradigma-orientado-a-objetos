@@ -31,3 +31,6 @@
 		carrito.agregarAlCarrito(new Producto(descripcion = "Chocolate", precioUnitario = 20))
 		assert.equals(quesoCremoso.valorAAbonar() + 20, carrito.totalAAbonar())
 	}
+	
+// Test del ejercicio anterior
+/*...test[-1]...*/
